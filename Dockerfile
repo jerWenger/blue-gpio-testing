@@ -1,4 +1,4 @@
-from python:3.9-slim-bullseye
+FROM python:3.9-slim-bullseye
 
 COPY install.sh /install.sh
 
@@ -49,4 +49,4 @@ LABEL links='{\
   }'
 LABEL requirements="core >= 1.1"
 
-ENTRYPOINT pigpiod && cd /app && GPIOZERO_PIN_FACTORY=pigpio python main.py
+ENTRYPOINT ["/bin/sh", "-c", "pigpiod && cd /app && GPIOZERO_PIN_FACTORY=pigpio python main.py"]
