@@ -53,7 +53,7 @@
             async setServo(value) {
                 axios.post('/v1.0/setServo', null, {
                     params: {
-                        pin: 1,
+                        pin: 5,
                         pwm: value,
                     }
                 })
